@@ -4,24 +4,14 @@ export const CartContext = createContext({
   cartComics: [],
   totalItems: 0,
   addComicsToCart:  () => {},
-  removeComicsToCart:  () => {}
+  removeComicsToCart:  () => {},
+  setCartComics: () => {}
 });
 
 export const CartContextProvider = ({ children }) => {
   const [cartComics, setCartComics] = useState([]);
   const totalItems = cartComics.length;
- console.log("carrinho:",cartComics)
- 
- /**
-   * Adicionar comics ao carrinho da localStorage
-   * @param {{}} comics 
-   */
- const addComicsToStorageCart  = (storageComics) =>{
-    const updateStorageCart = []
-    updateStorageCart.push(storageComics)
-    const storageCart = JSON.stringify(updateStorageCart)
-    localStorage.setItem('cart', storageCart)
-  }
+
 
   /**
    * Adicionar comics ao carrinho
@@ -30,8 +20,11 @@ export const CartContextProvider = ({ children }) => {
   const addComicsToCart  = (comics) =>{
     const updateCart = []
     updateCart.push(comics)
-    setCartComics([...cartComics,...updateCart])
-    addComicsToStorageCart(comics)
+    const cart = [...cartComics,...updateCart]
+
+    setCartComics(cart)
+    const storageCart = JSON.stringify(cart)
+    localStorage.setItem('cart', storageCart)
   }
 
    /**
@@ -41,10 +34,12 @@ export const CartContextProvider = ({ children }) => {
   const removeComicsToCart  = (comics) =>{
    const filterCart = cartComics.filter(cart => cart.id !== comics.id)
    setCartComics(filterCart)
+   const storageCart = JSON.stringify(filterCart)
+    localStorage.setItem('cart', storageCart)
   }
 
   return (
-    <CartContext.Provider value={{ cartComics, totalItems, addComicsToCart, removeComicsToCart }}>
+    <CartContext.Provider value={{ cartComics, totalItems, addComicsToCart, removeComicsToCart, setCartComics }}>
       {children}
     </CartContext.Provider>
   );
