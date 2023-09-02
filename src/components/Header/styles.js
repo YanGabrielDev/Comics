@@ -24,8 +24,8 @@ ${({theme}) => css`
     background-color: ${theme.colors.main};
     color: ${theme.colors.primary};
     border: solid 1px ${theme.colors.primary};
-    position: absolute;
-    right: 56px;
-    top: 8px;
+    position: relative;
+    right: -31px;
+    top: -45px;
 `}
 `;
