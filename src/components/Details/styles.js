@@ -59,18 +59,7 @@ export const DetailsDescription = styled.span`
   `}
 `;
 
-export const DetailsDescriptionContainer = styled.div`
-  ${({ theme }) => css`
-    padding: 1.25rem;
-    width: 100%;
-    height: auto;
-    background-color: ${theme.colors.mainSecondary};
-    border-radius: 0.5rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.25rem;
-  `}
-`;
+
 export const DetailsPriceContainer = styled.div`
   ${() => css`
     display: flex;

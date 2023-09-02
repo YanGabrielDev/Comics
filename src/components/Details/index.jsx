@@ -3,11 +3,11 @@ import thanos from '../../assets/svgs/thanos.svg'
 import {
   DetailsContainer,
   DetailsDescription,
-  DetailsDescriptionContainer,
   DetailsPriceContainer,
   DetailsComicTitle
 } from "./styles";
 import P from "prop-types";
+import { Content } from "../Content";
 export const Details = ({ detailsComics }) => {
   const { prices, title, description, thumbnail } = detailsComics;
   const {path, extension} = thumbnail
@@ -19,16 +19,16 @@ export const Details = ({ detailsComics }) => {
  <>
  <DetailsComicTitle>{title}</DetailsComicTitle>
     <DetailsContainer>
-        <img src={hqImage}/>
-      <DetailsDescriptionContainer>
+        <img src={hqImage} loading="lazy"/>
+      <Content>
         <DetailsDescription>
           {description ?? "Ops parece que o Thanos passou por aqui..."}
         </DetailsDescription>
-        {description ?? <img className="thanos-image" src={thanos} />}
+        {description ?? <img className="thanos-image" src={thanos} loading="lazy" />}
         <DetailsPriceContainer>
           <strong>{hqPrice}</strong>
         </DetailsPriceContainer>
-      </DetailsDescriptionContainer>
+      </Content>
     </DetailsContainer>
  </>
   );
