@@ -1,36 +1,10 @@
-import { useEffect, useState } from "react";
-import { restApiProvider } from "../../services/restApiProvider";
 import {Loader} from "../../components/Loader"
-import { useLocation} from "react-router-dom";
-import { Details } from "../../components/Details";
+import {Details} from "../../components/Details"
+import { useDetails } from "../../hooks/useDetails";
 
 
-export const DetailsComics = () => {
-  const location = useLocation();
-  const [details, setDetails] = useState();
-  const [isLoading, setIsLoading] = useState(true);
-
-
-  const loadComicDetails = async (id) => {
-    try {
-      const results = await restApiProvider.getDetailsComics(id);
-      if (results) {
-        setDetails(results[0]);
-        setIsLoading(false)
-
-      }
-    } catch (error) {
-      console.error(error);
-      setIsLoading(false)
-
-    }
-  };
-  useEffect(() => {
-    const {id} = location.state;
-    if (id) {
-      loadComicDetails(id);
-    }
-  }, []);
+function  DetailsComics  () {
+  const {details, isLoading} = useDetails()
 
   return( 
     <>
@@ -43,4 +17,6 @@ export const DetailsComics = () => {
     </>
 )
   
-};
+}
+
+export default DetailsComics;
