@@ -7,6 +7,8 @@ export const theme = {
     primary: "#0055ff",
     primarySoft: "#ebf1ff",
     primaryHover: "#002163",
+    softBlack: "#161617",
+    danger: "#eb4034",
   },
   font: {
     weight: {
@@ -16,6 +18,7 @@ export const theme = {
       bold: 800,
     },
     size: {
+      small: "0.75rem",
       normal: "1rem",
       medium: "1.25rem",
       large: "2rem",
