@@ -1,20 +1,28 @@
 import { useEffect, useState } from "react";
 import { restApiProvider } from "../../services/restApiProvider";
-import {ComicDetailsContainer, ComicDetailsImage} from './styles'
+import {Loader} from "../../components/Loader"
 import { useLocation} from "react-router-dom";
+import { Details } from "../../components/Details";
 
-export const ComicDetails = () => {
+
+export const DetailsComics = () => {
   const location = useLocation();
-
   const [details, setDetails] = useState();
+  const [isLoading, setIsLoading] = useState(true);
+
+
   const loadComicDetails = async (id) => {
     try {
       const results = await restApiProvider.getDetailsComics(id);
       if (results) {
         setDetails(results[0]);
+        setIsLoading(false)
+
       }
     } catch (error) {
       console.error(error);
+      setIsLoading(false)
+
     }
   };
   useEffect(() => {
@@ -23,12 +31,16 @@ export const ComicDetails = () => {
       loadComicDetails(id);
     }
   }, []);
-  console.log(details);
+
   return( 
-    <ComicDetailsContainer>
-    <ComicDetailsImage/>
-    
-    </ComicDetailsContainer>
+    <>
+     {isLoading  ?  (
+        <Loader/>
+    ) : (
+
+     <Details detailsComics={details}/>
+    )}
+    </>
 )
   
 };
