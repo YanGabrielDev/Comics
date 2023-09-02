@@ -7,8 +7,8 @@ export const ComicsShop = ({ comics }) => {
     <ComicsShopContainer>
       <ComicsShopTitle>Nossas comics</ComicsShopTitle>
       <ComicsShopping>
-        {comics.map((comics) => {
-          const { id, title, prices, thumbnail } = comics;
+        {comics.map((comic) => {
+          const { id, title, prices, thumbnail } = comic;
           return (
             <Card
               key={id}
@@ -17,6 +17,7 @@ export const ComicsShop = ({ comics }) => {
               title={title}
               image={thumbnail.path}
               price={prices[0].price}
+              comic={comic}
             />
           );
         })}
