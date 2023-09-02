@@ -11,15 +11,12 @@ export const useComics = () => {
    * Carrega as comics
    */
   async function loadComics(offset) {
+    setIsLoading(true)
     try {
-      if(!isLoading){
-
-        setIsLoading(true)
-        const results = await getComics(offset);
-        if (results) {
-          setMarvelComics([...marvelComics,...results]);
-          setIsLoading(false)
-        }
+      const results = await getComics(offset);
+      if (results) {
+        setMarvelComics([...marvelComics,...results]);
+        setIsLoading(false)
       }
     } catch (error) {
       console.error(error);
@@ -37,7 +34,7 @@ export const useComics = () => {
    useEffect(() => {
     const offset = currentPage === 1 ? 0 : 20
     loadComics(offset);
-  }, [currentPage, isLoading]);
+  }, [currentPage]);
   
   /**
    * Obeserva de a sentila esta visivel, se estiver atualiza a pagina
