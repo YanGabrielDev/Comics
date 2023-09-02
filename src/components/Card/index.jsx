@@ -3,11 +3,14 @@ import { CardContainer, CardImage, ComicsTitle, CardFooter } from "./styles";
 import { useFormat } from "../../hooks/useFormat";
 import { useNavigate } from "react-router-dom";
 import { ShopButton } from "../ShopButton";
-export const Card = ({ id, title, image, extension, price }) => {
+import { useCart } from "../../hooks/useCart";
+export const Card = ({ id, title, image, extension, price, comic }) => {
   const { formatCurrency } = useFormat();
   const navigate = useNavigate();
   const hqImage = `${image}.${extension}`;
   const hqPrice = formatCurrency(price);
+  const {addComicsToCart} = useCart()
+  
   return (
     <CardContainer>
       <CardImage
@@ -19,7 +22,7 @@ export const Card = ({ id, title, image, extension, price }) => {
       <ComicsTitle title={title}>{title}</ComicsTitle>
       <CardFooter>
         <strong>{hqPrice}</strong>
-        <ShopButton />
+        <ShopButton onClick={() => addComicsToCart(comic)}/>
       </CardFooter>
     </CardContainer>
   );
@@ -31,4 +34,5 @@ Card.propTypes = {
   image: P.string.isRequired,
   extension: P.string.isRequired,
   price: P.number.isRequired,
+  comic: P.object.isRequired
 };
