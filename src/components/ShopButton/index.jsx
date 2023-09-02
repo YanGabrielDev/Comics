@@ -1,10 +1,16 @@
 import {ShoppingCartIcon} from 'lucide-react'
 import { Button } from './styles'
+import P from "prop-types";
 
-export const ShopButton = () => {
+
+export const ShopButton = ({onClick}) => {
     return(
-        <Button>
+        <Button onClick={onClick}>
           <ShoppingCartIcon/>
         </Button>
     )
 }
+
+ShopButton.propTypes = {
+    onClick: P.func,
+  };
