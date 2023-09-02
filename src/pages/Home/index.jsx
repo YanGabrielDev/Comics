@@ -3,7 +3,7 @@ import { ComicsShop } from "../../components/ComicsShop";
 import { useComics } from "../../hooks/useComics";
 import { Loader } from "../../components/Loader";
 
-export const Home = () => {
+function Home  ()  {
   const { marvelComics, isLoading } = useComics();
   return (
     <>
@@ -19,4 +19,6 @@ export const Home = () => {
       </section>
     </>
   );
-};
+}
+
+export default Home;
