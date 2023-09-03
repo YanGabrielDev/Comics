@@ -21,7 +21,7 @@
 :small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
 
 ## Descrição do projeto
-![home](src/public/home.png)
+![home](public/home.png)
 
 <p align="justify">
   Teste para a vaga de desenvolvedor mobile.
