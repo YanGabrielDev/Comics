@@ -45,7 +45,10 @@ function CartForm() {
         handleSubmit()
     },
   });
-
+  
+  /**
+   * Faz o submit do formulario
+   */
   const handleSubmit = () => {
     const {city, street, neighbourhood, number} = formik.values
     setCartComics([])
