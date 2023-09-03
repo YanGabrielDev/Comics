@@ -15,6 +15,7 @@ import { AddressForm } from "./addressForm";
 import { useFormik } from "formik";
 import { validationSchema } from "./validationSchema";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function CartForm() {
   const { formatCurrency } = useFormat();
@@ -22,6 +23,7 @@ function CartForm() {
   const finalValue = cartComics.reduce((sumValue, cart) => {
     return sumValue + cart.prices[0].price;
   }, 0);
+  const navigate = useNavigate()
   const cartIsEmpty = cartComics.length === 0;
 
   const sumTotal = formatCurrency(finalValue);
@@ -37,19 +39,36 @@ function CartForm() {
       state: "",
     },
     validationSchema,
+    validateOnChange: false,
+    validateOnBlur: false,
     onSubmit: () => {
-      alert("opa");
+        handleSubmit()
     },
   });
 
-  /**
+  const handleSubmit = () => {
+    const {city, street, neighbourhood, number} = formik.values
+    setCartComics([])
+    localStorage.clear()
+    navigate("/Checkout", {
+        state: {
+            address: {
+              street: street,
+              neighbourhood: neighbourhood,
+              number: number,
+              city: city
+        }}
+     })
+  }
+
+   /**
    * Verifica se existe comics na localStorage
    */
-  useEffect(() => {
-    const storageCart = localStorage.getItem("cart");
-    const cart = JSON.parse(storageCart);
-    if (cart.length > 0) {
-      setCartComics(cart);
+   useEffect(() => {
+    const storageCart = localStorage.getItem('cart')
+    const cart = JSON.parse(storageCart)
+    if(cart !== null){
+      setCartComics(cart)
     }
   }, []);
 
@@ -96,7 +115,7 @@ function CartForm() {
           </ScrollArea>
           {!cartIsEmpty && (
             <Contentfooter>
-              <ShopButton onClick={formik.handleSubmit}>
+              <ShopButton onClick={formik.handleSubmit} type='submit'>
                 <span>Finalizar compra</span>
               </ShopButton>
               <strong>{sumTotal}</strong>
