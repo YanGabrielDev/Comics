@@ -4,6 +4,7 @@ import  DetailsComics  from "./pages/DetailsComics";
 import { Header } from "./components/Header";
 import { Container } from "./components/Container";
 import CartForm from "./pages/CartForm";
+import Checkout from "./pages/Checkout";
 
 export const Router = () => {
   return (
@@ -11,9 +12,10 @@ export const Router = () => {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/Comic-details" element={<DetailsComics />} />
-          <Route path="/Cart-form" element={<CartForm />} />
+          <Route exect path="/" element={<Home />} />
+          <Route exect path="/Comic-details" element={<DetailsComics />} />
+          <Route exect path="/Cart-form" element={<CartForm />} />
+          <Route exect path="/Checkout" element={<Checkout />} />
         </Routes>
       </BrowserRouter>
     </Container>
