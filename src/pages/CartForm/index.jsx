@@ -11,11 +11,11 @@ import { useCart } from "../../hooks/useCart";
 import { useFormat } from "../../hooks/useFormat";
 import { ShopButton } from "../../components/ShopButton";
 import { Trash } from "lucide-react";
-import { AddressForm } from "./addressForm";
 import { useFormik } from "formik";
 import { validationSchema } from "./validationSchema";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { AddressForm } from "./form";
 
 function CartForm() {
   const { formatCurrency } = useFormat();
