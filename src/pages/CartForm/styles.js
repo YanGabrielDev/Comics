@@ -63,6 +63,9 @@ export const CartContainer = styled.div`
           overflow: hidden;
         }
       }
+      div.button-container{
+        max-width: 200px;
+      }
     }
   `}
 `;

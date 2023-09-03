@@ -16,6 +16,7 @@ import { validationSchema } from "./validationSchema";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { AddressForm } from "./form";
+import { toast } from "react-toastify";
 
 function CartForm() {
   const { formatCurrency } = useFormat();
@@ -62,6 +63,7 @@ function CartForm() {
               city: city
         }}
      })
+     toast.success("Compra finalizada com sucesso!")
   }
 
    /**
