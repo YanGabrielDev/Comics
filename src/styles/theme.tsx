@@ -25,7 +25,7 @@ export const theme = {
       huge: "3rem"
     },
     family:{
-      baloo: "Baloo 2",
+      baloo: '"Baloo 2"',
       poppins: "Poppins"
     }
   },
