@@ -1,20 +1,6 @@
 import axios from 'axios'
-import md5 from "md5";
 
-const marvelPrivateKey = import.meta.env.VITE_MARVEL_API_PRIVATE_KEY || ""
-const apikey = import.meta.env.VITE_MARVEL_API_KEY || ""
-const ts = Number(new Date());
-
-const hash = md5(ts + marvelPrivateKey + apikey);
-
-export const api = axios.create({
-    baseURL: "https://gateway.marvel.com/v1/public",
-    params: {
-      ts,
-      apikey,
-      hash,
-    },
-  })
+export const api = axios.create()
 
 
 api.interceptors.request.use(
