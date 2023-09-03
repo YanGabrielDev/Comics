@@ -2,7 +2,6 @@
 
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=react js&message=lib&color=00BEF5&style=for-the-badge&logo=REACT"/>
-    <img src="https://img.shields.io/static/v1?label=NODEJS&message=Runtime%20Built&color=339933&style=for-the-badge&logo=Node.js"/>
     <img src="https://img.shields.io/static/v1?label=Vite&message=Runtime%20Built&color=9467FE&style=for-the-badge&logo=vite"/>
   <img src="https://img.shields.io/static/v1?label=JAVASCRIPT&message=Language&color=F7DF1E&style=for-the-badge&logo=javascript"/>
   <img src="http://img.shields.io/static/v1?label=STATUS&message=CONCLUIDO&color=GREEN&style=for-the-badge"/>
@@ -22,6 +21,7 @@
 :small_blue_diamond: [Como rodar a aplicação](#como-rodar-a-aplicação-arrow_forward)
 
 ## Descrição do projeto
+![home](src/public/home.png)
 
 <p align="justify">
   Teste para a vaga de desenvolvedor mobile.
