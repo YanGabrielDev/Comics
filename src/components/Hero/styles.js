@@ -26,6 +26,8 @@ font-weight: ${theme.font.weight.bold};
 font-size: ${theme.font.size.huge};
 font-family: "Baloo 2";
 animation: wiggle 1s ease-in-out ;
+line-height: 100%;
+color: ${theme.colors.primary};
 
 
 @keyframes wiggle {
