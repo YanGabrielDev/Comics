@@ -4,8 +4,8 @@ export const Hero = () => {
     return(
         <HeroContainer>
             <HeroDetails>
-            <HeroTitle>Encontre a sua HQ favorita na melhor loja de Comics ja criada!</HeroTitle>
-            <HeroSubTitle>Explore o universo das HQs na Loja de Comics!</HeroSubTitle>
+            <HeroTitle>Explore a loja que te leva para o mundo dos quadrinhos!</HeroTitle>
+            <HeroSubTitle>Venha conhecer as histórias e comprar os seus quadrinhos.</HeroSubTitle>
             </HeroDetails>
             <HeroImage src={heroImage} alt="logo do deadpool"/>
         </HeroContainer>
