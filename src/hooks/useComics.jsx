@@ -3,50 +3,47 @@ import { marvelApiProvider } from "../services/marvelApiProvider";
 import { useCart } from "./useCart";
 
 export const useComics = () => {
-    const [marvelComics, setMarvelComics] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
-    const [currentPage, setCurrentPage] = useState(1)
-    const { getComics } = marvelApiProvider;
-    const {setCartComics} = useCart()
-  
+  const [marvelComics, setMarvelComics] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const { getComics } = marvelApiProvider;
+  const { setCartComics } = useCart();
+
   /**
    * Carrega as comics
    */
   async function loadComics(offset) {
-    setIsLoading(true)
+    setIsLoading(true);
     try {
       const results = await getComics(offset);
       if (results) {
-        setMarvelComics([...marvelComics,...results]);
-        setIsLoading(false)
+        setMarvelComics([...marvelComics, ...results]);
+        setIsLoading(false);
       }
     } catch (error) {
       console.error(error);
-      setIsLoading(false)
-
+      setIsLoading(false);
     }
   }
 
-   /**
+  /**
    * Carrega mais comics ao chegar no final da tela
    */
-   useEffect(() => {
-    const offset = currentPage === 1 ? 0 : 20
+  useEffect(() => {
+    const offset = currentPage === 1 ? 0 : 20;
     loadComics(offset);
   }, [currentPage]);
 
-
-    /**
+  /**
    * Verifica se existe comics na localStorage
    */
-     useEffect(() => {
-      const storageCart = localStorage.getItem('cart')
-      const cart = JSON.parse(storageCart)
-      if(cart.length > 0){
-        setCartComics(cart)
-      }
-    }, []);
-
+  useEffect(() => {
+    const storageCart = localStorage.getItem("cart");
+    const cart = JSON.parse(storageCart);
+    if (cart !== null) {
+      setCartComics(cart);
+    }
+  }, []);
 
   /**
    * Obeserva de a sentila esta visivel, se estiver atualiza a pagina
