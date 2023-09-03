@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { ShopButton } from "../ShopButton";
 import { useCart } from "../../hooks/useCart";
 import { ShoppingCartIcon } from "lucide-react";
+import { toast } from "react-toastify";
 
 export const Card = ({ id, title, image, extension, price, comic }) => {
   const { formatCurrency } = useFormat();
@@ -24,7 +25,7 @@ export const Card = ({ id, title, image, extension, price, comic }) => {
       <ComicsTitle title={title}>{title}</ComicsTitle>
       <CardFooter>
         <strong>{hqPrice}</strong>
-        <ShopButton onClick={() => addComicsToCart(comic)}>
+        <ShopButton onClick={() => {addComicsToCart(comic), toast.success(`${title} adicionado ao carrinho!`)}}>
           <ShoppingCartIcon />
         </ShopButton>
       </CardFooter>
