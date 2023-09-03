@@ -2,9 +2,9 @@ import { Button } from './styles'
 import P from "prop-types";
 
 
-export const ShopButton = ({onClick, children}) => {
+export const ShopButton = ({onClick, children, type}) => {
     return(
-        <Button onClick={onClick}>
+        <Button onClick={onClick} type={type}>
           {children}
         </Button>
     )
@@ -12,5 +12,6 @@ export const ShopButton = ({onClick, children}) => {
 
 ShopButton.propTypes = {
     onClick: P.func,
-    children: P.node
+    children: P.node,
+    type: P.string
   };
