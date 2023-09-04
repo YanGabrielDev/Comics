@@ -28,7 +28,7 @@
 
 ## Funcionalidades
 <p>
-  Nesse projeto é possível ver as descrições e realizar a compra dos quadrinhos usando o endereço do usuario.
+  Nesse projeto é possível realizar scroll infinito, adicionar quadrinhos ao carrinho, ver a descrição dos quadrinho, realizar a compra usando o endereço do usuario e caso ele saia da aplicação os items do carrinho permanecem salvos. 
 </p>
 
 ## Como rodar a aplicação :arrow_forward:
@@ -67,6 +67,9 @@ Para a api funcionar é necessario entrar no site [Marvel Api](https://developer
 - [Axios](https://axios-http.com/docs/intro) - realiza requisições HTTP
 - [lucide Icons](https://lucide.dev/guide/) - lib para ícones
 - [Api cep](https://apicep.com/api-de-consulta/) - Api que realiza a busca do endereço do usuario usando o cep.
+- [Styled Components](https://styled-components.com) - Lib usada para estilização.
+- [Formik](https://formik.org) - Lib usada para manipular o formulario.
+- [Yup](https://github.com/jquense/yup) - Lib usada para validar o formulario.
 
 
 ## Desenvolvedores/Contribuintes :octocat:
