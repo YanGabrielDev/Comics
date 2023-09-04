@@ -25,9 +25,12 @@ export const Card = ({ id, title, image, extension, price, comic }) => {
       <ComicsTitle title={title}>{title}</ComicsTitle>
       <CardFooter>
         <strong>{hqPrice}</strong>
+        {price === 0 ? <span className="free">Gratuita!</span> : (
+
         <ShopButton onClick={() => {addComicsToCart(comic), toast.success(`${title} adicionado ao carrinho!`)}}>
           <ShoppingCartIcon />
         </ShopButton>
+        )}
       </CardFooter>
     </CardContainer>
   );
