@@ -1,4 +1,4 @@
-<h1>Teste Desenvolvedor Frontend Cinnecta</h1>
+<h1>Marvel comics</h1>
 
 <p align="center">
   <img src="https://img.shields.io/static/v1?label=react js&message=lib&color=00BEF5&style=for-the-badge&logo=REACT"/>
