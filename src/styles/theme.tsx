@@ -9,6 +9,7 @@ export const theme = {
     primaryHover: "#002163",
     softBlack: "#161617",
     danger: "#eb4034",
+    green: "#19c702"
   },
   font: {
     weight: {
