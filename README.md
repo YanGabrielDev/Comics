@@ -31,7 +31,6 @@
   Nesse projeto é possível ver as descrições e realizar a compra dos quadrinhos usando o endereço do usuario.
 </p>
 
-
 ## Como rodar a aplicação :arrow_forward:
 
 No terminal, clone o projeto:

@@ -6,6 +6,7 @@ export const useComics = () => {
   const [marvelComics, setMarvelComics] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
+  const [offset, setOffset] = useState(20);
   const { getComics } = marvelApiProvider;
   const { setCartComics } = useCart();
 
@@ -15,6 +16,7 @@ export const useComics = () => {
   async function loadComics(offset) {
     setIsLoading(true);
     try {
+      setOffset(offset + 20)
       const results = await getComics(offset);
       if (results) {
         setMarvelComics([...marvelComics, ...results]);
@@ -30,7 +32,6 @@ export const useComics = () => {
    * Carrega mais comics ao chegar no final da tela
    */
   useEffect(() => {
-    const offset = currentPage === 1 ? 0 : 20;
     loadComics(offset);
   }, [currentPage]);
 
