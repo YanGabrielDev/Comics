@@ -12,6 +12,11 @@ ${() =>css`
  display: flex;
  flex-direction: column;
  gap: 0.5rem;
+
+ span.sentinela{
+    margin: 0 auto;
+    padding: 1rem;
+ }
 `}
 `
 export const ComicsShopping = styled.div`
