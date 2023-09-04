@@ -12,6 +12,10 @@ export const CardContainer = styled.div`
     padding: 1.25rem;
     background-color: ${theme.colors.mainSecondary};
     border-radius: 0.5rem;
+
+    span.free{
+      color: ${theme.colors.green};
+    }
   `}
 `;
 
