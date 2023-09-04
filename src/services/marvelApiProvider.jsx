@@ -25,7 +25,7 @@ export const marvelApiProvider = {
             format: "comic",
             formatType: "comic",
             noVariants: true,
-            orderBy: "modified",
+            limit: 40,
             offset: offset,
           },
         }
