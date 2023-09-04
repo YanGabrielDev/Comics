@@ -22,8 +22,9 @@ export const ComicsShop = ({ comics }) => {
           );
         })}
       </ComicsShopping>
-      <li id="sentinela" className="sentinela" />
 
+      <span id="sentinela" className="sentinela">Carregando mais...</span>
+      
     </ComicsShopContainer>
   );
 };
